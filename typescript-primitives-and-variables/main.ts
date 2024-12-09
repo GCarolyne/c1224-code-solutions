@@ -1,0 +1,15 @@
+const fullName: string = 'Carolyne Golias';
+const isCool: boolean = true;
+const totalPets: number = 2;
+console.log('The full name is', fullName);
+console.log('Are they cool', isCool);
+console.log('I currently have', totalPets, 'pets');
+console.log('typeof fullName', typeof fullName);
+console.log('typeof isCool', typeof isCool);
+console.log('typeof totalPets', typeof totalPets);
+const empty: null = null;
+console.log('This is empty', empty);
+console.log('typeof empty', typeof empty);
+let nothing: undefined;
+console.log('This is nothing', nothing);
+console.log('Typeof nothing', nothing);
