@@ -34,6 +34,6 @@ console.log('What is it Sparta', isSparta);
 console.log('The typeof', typeof isSparta);
 
 let motto: string = fullName;
-motto = fullName + ' is the Goat';
+motto += ' is the Goat';
 console.log('Results:', motto);
 console.log('It is a typeof', typeof motto);
