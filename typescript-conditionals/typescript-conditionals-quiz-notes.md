@@ -19,7 +19,7 @@ Answer the following questions in the provided markdown file before turning in t
   logical OR ||
   logical NOT !
 - How do you compare two different expressions in the same condition?
-  else/if statement
+  logical operators
 - What is the purpose of a `switch` statement?
   The switch statement is usefull to use when we have a collection of conditions or cases that need to be checked against.
 - Is a `default` clause required in order to use a `switch` statement?

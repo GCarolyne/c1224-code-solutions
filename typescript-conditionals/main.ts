@@ -73,13 +73,12 @@ function isOldEnoughToDrink(person: Person): boolean {
   }
 }
 
-function isOldEnoughToDrinkAndDrive(person: Person): any {
-  if (!person.age)
-    if (person.age > 21) {
-      return true;
-    } else {
-      return false;
-    }
+function isOldEnoughToDrinkAndDrive(person: Person): boolean {
+  if (person.age >= 21 && person.age >= 16) {
+    return false;
+  } else {
+    return false;
+  }
 }
 
 isOldEnoughToDrinkAndDrive(women);
