@@ -1,0 +1,9 @@
+'use strict';
+/* exported initial */
+function initial(array) {
+  const newArrayResults = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    newArrayResults.push(array[i]);
+  }
+  return newArrayResults;
+}
