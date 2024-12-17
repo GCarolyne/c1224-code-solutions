@@ -1,19 +1,26 @@
 'use strict';
 /* exported isVowel */
-// function isVowel(char: string): boolean {
-//   for (let i = 0; i < char.length; i++) {
-//     if (char[i] === 'a' || 'A') {
-//       return true;
-//     } else if (char[i] === 'e' || 'E') {
-//       return true;
-//     } else if (char[i] === 'i' || 'I') {
-//       return true;
-//     } else if (char[i] === 'o' || 'O') {
-//       return true;
-//     } else if (char[i] === 'u' || 'U') {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-// }
+function isVowel(char) {
+  if (char[0] === 'a') {
+    return true;
+  } else if (char[0] === 'A') {
+    return true;
+  } else if (char[0] === 'e') {
+    return true;
+  } else if (char[0] === 'E') {
+    return true;
+  } else if (char[0] === 'i') {
+    return true;
+  } else if (char[0] === 'I') {
+    return true;
+  } else if (char[0] === 'o') {
+    return true;
+  } else if (char[0] === 'O') {
+    return true;
+  } else if (char[0] === 'u') {
+    return true;
+  } else if (char[0] === 'U') {
+    return true;
+  }
+  return false;
+}
