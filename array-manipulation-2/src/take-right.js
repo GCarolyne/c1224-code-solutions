@@ -3,10 +3,10 @@
 function takeRight(array, count) {
   const newArray = [];
   if (count > array.length) {
-    return [...array];
+    return array;
   }
-  for (let i = array.length - 1; i >= 0; i--) {
-    newArray.push(array[count]);
+  for (let i = array.length - count; i < array.length; i++) {
+    newArray.push(array[i]);
   }
   return newArray;
 }
