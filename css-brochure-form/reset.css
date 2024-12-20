@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.form-container {
+  width: 584px;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 1 rem = 10px;
+}
