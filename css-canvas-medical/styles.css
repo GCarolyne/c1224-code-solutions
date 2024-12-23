@@ -347,3 +347,22 @@ nav {
 #item3 {
   padding-bottom: 10px;
 }
+
+.priv {
+  margin-left: 60px;
+  color: grey;
+  margin-right: 70px;
+  padding-bottom: 80px;
+  font-family: 'Tiempos Headline', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  src: url('TiemposHeadline-Regular.woff2') format('woff2');
+}
+
+.lastcon {
+  color: grey;
+  font-family: 'Tiempos Headline', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  src: url('TiemposHeadline-Regular.woff2') format('woff2');
+}
