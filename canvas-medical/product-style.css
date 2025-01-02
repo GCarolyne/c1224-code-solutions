@@ -1,0 +1,37 @@
+.container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.column-full {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+}
+
+.text-over-elder {
+  font-size: 18px;
+  display: block;
+  position: absolute;
+  top: 50px;
+  color: rgb(255, 255, 255);
+  font-weight: 200rem;
+  font-family: 'Tiempos Headline', Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+  padding-left: 70px;
+  padding-top: 90px;
+  padding-right: 50px;
+  width: 60%;
+}
+
+.elder-man {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.example-image1 {
+  width: 100%;
+}
