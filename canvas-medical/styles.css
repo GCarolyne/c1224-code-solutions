@@ -73,7 +73,7 @@ li > a {
 }
 
 .toprightlogo {
-  width: 50%;
+  width: 40%;
 }
 
 nav {
@@ -129,6 +129,12 @@ nav {
 .column-one-third {
   width: 100%;
   display: flex;
+  padding-right: 20px;
+  margin-right: 15px;
+  font-family: 'Tiempos Headline', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  src: url('TiemposHeadline-Regular.woff2') format('woff2');
 }
 
 .listleft {
@@ -307,6 +313,9 @@ nav {
 .column-third {
   width: 100%;
   flex-basis: calc(100% / 1);
+  font-family: 'Tiempos Headline', sans-serif;
+  font-weight: 100;
+  src: url('TiemposHeadline-Regular.woff2') format('woff2');
 }
 
 .productlist {
@@ -355,7 +364,7 @@ nav {
   padding-bottom: 80px;
   font-family: 'Tiempos Headline', sans-serif;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 18px;
   src: url('TiemposHeadline-Regular.woff2') format('woff2');
 }
 
@@ -363,6 +372,6 @@ nav {
   color: grey;
   font-family: 'Tiempos Headline', sans-serif;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 18px;
   src: url('TiemposHeadline-Regular.woff2') format('woff2');
 }
