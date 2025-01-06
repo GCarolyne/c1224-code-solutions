@@ -1,0 +1,12 @@
+.column-full ::before {
+  background: linear-gradient(rgb(128, 128, 128));
+  width: 100%;
+}
+
+.doctor {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: block;
+  mask-image: linear-gradient(grey, black);
+}
