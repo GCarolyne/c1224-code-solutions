@@ -11,7 +11,7 @@ function handleClick(): undefined {
   if (!$hotButton || !$clickCount) {
     throw new Error('The $hotButton or $clickCount query failed');
   }
-  $clickCount.textContent = `${storedClicks}`;
+  $clickCount.textContent = `Clicks: ${storedClicks}`;
   if (storedClicks < 4) {
     $hotButton.className = 'hot-button cold ';
   } else if (storedClicks < 7) {
