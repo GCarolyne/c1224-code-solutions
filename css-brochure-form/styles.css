@@ -1,0 +1,116 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-left: 8rem;
+  color: #ff8000;
+}
+
+.companyemail {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  font-size: 10px;
+  padding: 5 rem;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+.name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 10px;
+  padding: 5 rem;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+#name {
+  padding-right: 10rem;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border-color: rgb(161, 161, 161);
+  border-style: solid;
+}
+
+select {
+  padding-right: 10rem;
+}
+
+#companyemail {
+  padding-right: 10rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border-color: rgb(161, 161, 161);
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#hiring {
+  padding-right: 10rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-color: rgb(161, 161, 161);
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.hiring {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  padding-top: 250 px;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+.how-many {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+  border-radius: 10px;
+}
+
+.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 6rem;
+  border-radius: 40%;
+}
+
+.learn-more-form {
+  margin-left: 5px;
+}
+
+.submit {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(233, 78, 0);
+  color: white;
+  margin-left: 9rem;
+}
+
+#howmany {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 13rem;
+  background-color: hsl(0deg, 17%, 91%);
+  border-color: rgb(161, 161, 161);
+  border-style: solid;
+  border-radius: 5px;
+}
