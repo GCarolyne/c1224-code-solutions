@@ -11,23 +11,17 @@ function handleClick() {
   }
   $clickCount.textContent = `${storedClicks}`;
   if (storedClicks < 4) {
-    $hotButton.className =
-      'hot-button cold hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button cold ';
   } else if (storedClicks < 7) {
-    $hotButton.className =
-      'hot-button cool hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button cool ';
   } else if (storedClicks < 10) {
-    $hotButton.className =
-      'hot-button tepid hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button tepid ';
   } else if (storedClicks < 13) {
-    $hotButton.className =
-      'hot-button warm hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button warm ';
   } else if (storedClicks < 16) {
-    $hotButton.className =
-      'hot-button hot hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button hot ';
   } else {
-    $hotButton.className =
-      'hot-button nuclear hot-button hot-button:active hot-button:focus';
+    $hotButton.className = 'hot-button nuclear ';
   }
 }
 $hotButton.addEventListener('click', handleClick);
