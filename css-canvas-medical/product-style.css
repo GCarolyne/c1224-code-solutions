@@ -1,0 +1,22 @@
+.container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.column-full {
+  display: flex;
+  width: 100%;
+}
+
+.text-over-elder {
+  align-items: center;
+  color: black;
+  padding-left: 50px;
+}
+
+.elder-man {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
