@@ -78,7 +78,7 @@ function renderPokemon(pokedex) {
   const $h2 = document.createElement('h2');
   $h2.textContent = pokedex.name;
   const $h3 = document.createElement('h3');
-  $h3.textContent = pokedex.number;
+  $h3.textContent = '#' + pokedex.number;
   const $p = document.createElement('p');
   $p.textContent = pokedex.description;
   $divParent.appendChild($divPokemonCard);
