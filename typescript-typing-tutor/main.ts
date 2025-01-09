@@ -1,6 +1,6 @@
 const $span = document.querySelectorAll('span');
 if (!$span) throw new Error('the query for span failed');
-console.log('$span', $span);
+
 let count = 0;
 
 document.addEventListener('keydown', (event) => {
