@@ -1,17 +1,12 @@
 const $tabContainer = document.querySelector('.tab-container');
 if (!$tabContainer) throw new Error('the query tabcontainer failed.');
 
-console.log('tabContainer', $tabContainer);
-
 const $tab = document.querySelectorAll('.tab');
 
 if (!$tab) throw new Error('the query tab failed.');
-console.log('$tab', $tab);
 
-const $view = document.querySelector('.view');
+const $view = document.querySelectorAll('.view');
 if (!$view) throw new Error('the query view failed');
-
-console.log('$view', $view);
 
 $tabContainer.addEventListener('click', (event: Event) => {
   const $eventTarget = event.target as HTMLDivElement;
@@ -26,6 +21,15 @@ $tabContainer.addEventListener('click', (event: Event) => {
     });
   }
 
-  const dataView = $view.getAttribute('data-view');
-  console.log('dataView', dataView);
+  const dataView = $eventTarget.dataset.view;
+
+  if ($eventTarget.matches('.tab')) {
+    $view.forEach((view) => {
+      if (view.getAttribute('data-view') === dataView) {
+        view.classList.remove('hidden');
+      } else {
+        view.classList.add('hidden');
+      }
+    });
+  }
 });
