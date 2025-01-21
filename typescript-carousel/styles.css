@@ -24,3 +24,21 @@
   border: none;
   background: transparent;
 }
+
+.fa-chevron-left {
+  font-size: 30px;
+  padding-right: 2rem;
+}
+
+.fa-chevron-right {
+  font-size: 30px;
+  padding-left: 2rem;
+}
+
+.circles {
+  padding-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
