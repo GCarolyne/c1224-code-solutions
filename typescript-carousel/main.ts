@@ -76,3 +76,20 @@ $rightArrow.addEventListener('click', (event: Event) => {
     $circles[currentCircleIndex].classList.add('fa-solid');
   }
 });
+
+const $leftArrow = document.querySelector('.left-arrow');
+if (!$leftArrow) throw new Error('the query for the left arrow failed');
+
+$leftArrow.addEventListener('click', (event: Event) => {
+  const $eventTarget = event.target;
+  if ($eventTarget === $rightArrow) {
+    $rotateImage[currentImageIndex].classList.add('hidden');
+    $circles[currentCircleIndex].classList.remove('fa-solid');
+
+    currentImageIndex = (currentImageIndex - 1) % $rotateImage.length;
+    currentCircleIndex = (currentCircleIndex - 1) % $circles.length;
+
+    $rotateImage[currentImageIndex].classList.remove('hidden');
+    $circles[currentCircleIndex].classList.add('fa-solid');
+  }
+});
