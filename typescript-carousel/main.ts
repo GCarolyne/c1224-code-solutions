@@ -41,19 +41,6 @@ if (!$circleThree) throw new Error('the query for the 3 circle failed');
 const $circleFour = document.querySelector('#circle-four');
 if (!$circleFour) throw new Error('the query for the four circle failed');
 
-const allImages = [$rotateImage1, $rotateImage2, $rotateImage3, $rotateImage4];
-
-const allCircles = [
-  $circleFull,
-  $circleOne,
-  $circleTwo,
-  $circleThree,
-  $circleFour,
-];
-
-console.log('Images', allImages.length);
-console.log('Circles', allCircles.length);
-
 const $rotateImage = document.querySelectorAll('.rotate-image');
 if (!$rotateImage) throw new Error('the query for the rotate image failed. ');
 
@@ -77,19 +64,73 @@ $rightArrow.addEventListener('click', (event: Event) => {
   }
 });
 
-const $leftArrow = document.querySelector('.left-arrow');
+const $leftArrow = document.querySelector('.left');
 if (!$leftArrow) throw new Error('the query for the left arrow failed');
 
-$leftArrow.addEventListener('click', (event: Event) => {
-  const $eventTarget = event.target;
-  if ($eventTarget === $rightArrow) {
-    $rotateImage[currentImageIndex].classList.add('hidden');
-    $circles[currentCircleIndex].classList.remove('fa-solid');
+$leftArrow.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
 
-    currentImageIndex = (currentImageIndex - 1) % $rotateImage.length;
-    currentCircleIndex = (currentCircleIndex - 1) % $circles.length;
+  currentImageIndex =
+    (currentImageIndex - 1 + $rotateImage.length) % $rotateImage.length;
+  currentCircleIndex =
+    (currentCircleIndex - 1 + $circles.length) % $circles.length;
 
-    $rotateImage[currentImageIndex].classList.remove('hidden');
-    $circles[currentCircleIndex].classList.add('fa-solid');
-  }
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+});
+
+$circleFull.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+
+  currentImageIndex = 0;
+  currentCircleIndex = 0;
+
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+});
+
+$circleOne.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+
+  currentImageIndex = 1;
+  currentCircleIndex = 1;
+
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+});
+
+$circleTwo.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+
+  currentImageIndex = 2;
+  currentCircleIndex = 2;
+
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+});
+
+$circleThree.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+
+  currentImageIndex = 3;
+  currentCircleIndex = 3;
+
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+});
+
+$circleFour.addEventListener('click', () => {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+
+  currentImageIndex = 4;
+  currentCircleIndex = 4;
+
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
 });
