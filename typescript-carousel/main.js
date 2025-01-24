@@ -30,14 +30,18 @@ let currentCircleIndex = 0;
 $rightArrow.addEventListener('click', (event) => {
   const $eventTarget = event.target;
   if ($eventTarget === $rightArrow) {
-    $rotateImage[currentImageIndex].classList.add('hidden');
-    $circles[currentCircleIndex].classList.remove('fa-solid');
-    currentImageIndex = (currentImageIndex + 1) % $rotateImage.length;
-    currentCircleIndex = (currentCircleIndex + 1) % $circles.length;
-    $rotateImage[currentImageIndex].classList.remove('hidden');
-    $circles[currentCircleIndex].classList.add('fa-solid');
+    rotateImage();
   }
 });
+function rotateImage() {
+  $rotateImage[currentImageIndex].classList.add('hidden');
+  $circles[currentCircleIndex].classList.remove('fa-solid');
+  currentImageIndex = (currentImageIndex + 1) % $rotateImage.length;
+  currentCircleIndex = (currentCircleIndex + 1) % $circles.length;
+  $rotateImage[currentImageIndex].classList.remove('hidden');
+  $circles[currentCircleIndex].classList.add('fa-solid');
+}
+setInterval(rotateImage, 3000);
 const $leftArrow = document.querySelector('.left');
 if (!$leftArrow) throw new Error('the query for the left arrow failed');
 $leftArrow.addEventListener('click', () => {
