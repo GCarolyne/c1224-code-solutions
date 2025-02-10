@@ -1,0 +1,163 @@
+    1  git branch practice-interview-challenge
+    2  git switch practice-interview-challenge 
+    3  git status
+    4  cd practice-interview-challenge
+    5  npx tsc --watch
+    6  cd ..
+    7  git add practice-interview-challenge
+    8  git commit -m "completed range report function)
+    9  git add practice-interview-challenge
+   10  git commit -m "completed range report"
+   11  git push origin practice-interview-challenge
+   12  git switch main
+   13  git pull origin main
+   14  git pull origin main
+   15  git branch typescript-timers
+   16  git switch typescript-timers
+   17  cd typescript-timers
+   18  npx tsc --watch
+   19  git add typescript-timers
+   20  git commit -m "completed typescript-timers"
+   21  git push origin typescript-timers
+   22  git switch main
+   23  git branch typescript-carousel
+   24  git switch typescript-carousel
+   25  git status
+   26  cd typescript-carousel
+   27  npx tsc --watch
+   28  cd typescript-carousel
+   29  npx tsc --watch
+   30  cd typescript-carousel
+   31  npx tsc --watch
+   32  cd ..
+   33  git add typescript-carousel
+   34  git commit -m "created html skeleton"
+   35  git push origin typescript-carousel
+   36  cd ..
+   37  git add typescript-carousel
+   38  git commit -m "created call back function for right arrow"
+   39  git push origin typescript-carousel
+   40  cd typescript-carousel
+   41  npx tsc --watch
+   42  cd ..
+   43  git add typescript-carousel
+   44  git commit -m "carousel switching through all images flow"
+   45  cd typescript-carousel
+   46  npx tsc --watch
+   47  cd ..
+   48  git switch main
+   49  git add typescpt-carousel
+   50  git add typescript-capt-carousel
+   51  git add typescript-carousel
+   52  git commit -m "right arrow functionality"
+   53  git push origin typescript-carousel
+   54  git switch main
+   55  git switch typescript-carousel
+   56  cd typescript-carousel
+   57  npx tsc --watch
+   58  cd ..
+   59  git add typescript-carousel
+   60  git commit -m "typescript carousel only to finish setTime out functionality"
+   61  git push origin typescript-carousel
+   62  git switch main
+   63  git branch typescript-operators
+   64  git switch typescript-operators
+   65  cd typescript-operators
+   66  npx tsc --watch
+   67  cd ..
+   68  git add  typescript-operators/
+   69  git commit -m "main ts complete"
+   70  git push origin typescript-oprators
+   71  git push origin typescript-operators
+   72  git add typescript-operators
+   73  git commit -m"updated answers"
+   74  git push origin typescript-operators
+   75  git switch main
+   76  git branch typescript-destructuring
+   77  git switch typescript-destructuring 
+   78  cd typescript-destructuring
+   79  npx tsc --watch
+   80  cd..
+   81  cd ..
+   82  git add typescript-destructuring
+   83  git commit -m"completed typescript destructuring"
+   84  git push origin typescript-destructuring
+   85  git switch main
+   86  git switch typescript-carousel
+   87  cd typescript-carousel
+   88  npx tsc --watch
+   89  cd ..
+   90  git add typescript-carousel
+   91  git commit -m "compelete typescript-carousel"
+   92  git push origin typescript-carousel
+   93  git switch main
+   94  git status
+   95  git pull origin main
+   96  git branch command-line-basics
+   97  git switch command-line-basics 
+   98  cd command-line-basics
+   99  man man
+  100  man cat
+  101  cat 
+  102  cd command-line-basics
+  103  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  104  cat lazinees.txt
+  105  cat laziness.txt
+  106  cat impatience.txt
+  107  cat hubris.txt
+  108  cat laziness.txt imaptience.txt hubris.txt
+  109  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  110  cat three-virtues.txt
+  111  man ls
+  112  ls -a
+  113  ls -F
+  114  ls lfz-staff/
+  115  ls -aF lfz-staff > lfz-staff/contents.txt
+  116  cat lfz-staff/contents.txt
+  117  man pwd
+  118  pwd
+  119  pwd > i-was-here.txt
+  120  ls
+  121  cat i-was-here.txt
+  122  cat i-was-here.txt
+  123  ls
+  124  cat i-was-here.txt
+  125  pwd > i-was-here.txt
+  126  ls
+  127  cat i-was-here.txt
+  128  man echo
+  129  echo 'Hello, World!'
+  130  echo 'Hello,World!' > hello.txt
+  131  ls
+  132  cat hello.txt
+  133  man touch
+  134  touch tag-youre-it.txt
+  135  touch snoot/boop.txt
+  136  ls snoot/
+  137  man mkdir
+  138  mkdir parent
+  139  ls
+  140  mkdir -p parent/child/grandchild
+  141  touch .gitkeep
+  142  ls -a
+  143  ls -a .gitkeep
+  144  touch parent/child/grandchild/.gitkeep
+  145  ls -a
+  146  man mv
+  147  mv pokiemans > pokemon
+  148  mv pokiemans pokemon
+  149  mv pokemon pokiemans
+  150  ls
+  151  mv pokiemans pokemon
+  152  ls
+  153  man rm
+  154  rm lol.txt
+  155  ls
+  156  rm -r kill-me/
+  157  ls
+  158  man cp
+  159  cp and-then.txt no-and-then.txt
+  160  ls
+  161  cat and-then.txt no-and-then.txt
+  162  man history
+  163  history > command-history.txt
