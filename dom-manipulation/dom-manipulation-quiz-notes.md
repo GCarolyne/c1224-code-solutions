@@ -17,7 +17,7 @@ Answer the following questions in the provided markdown file before turning in t
 - Would this assignment be simpler or more complicated if we didn't use a variable to keep track of the number of clicks?
   It would be more complicated.
 - Why is storing information about a program in variables better than only storing it in the DOM?
-  Performance, single source of truth when data lives in variables the DOM becomes a pure reflection of that data rather than being the source of it. Easier data processing. Testing. state management.
+  Performance, single source of truth when data lives in variables the DOM becomes a pure reflection of that data rather than being the source of it. Easier data processing. Testing. state management. And .
 
 ## Notes
 
