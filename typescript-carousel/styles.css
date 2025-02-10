@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 50% auto;
+  height: 100vh;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.column-third {
+  width: calc(100% / 3);
+}
+
+.left,
+.right {
+  border: none;
+  background: transparent;
+}
+
+.fa-chevron-left {
+  font-size: 30px;
+  padding-right: 2rem;
+}
+
+.fa-chevron-right {
+  font-size: 30px;
+  padding-left: 2rem;
+}
+
+.circles {
+  padding-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
