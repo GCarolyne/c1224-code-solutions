@@ -1,0 +1,29 @@
+.purple {
+  background-color: blueviolet;
+  color: white;
+}
+
+.lightPurple {
+  background-color: purple;
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.orange {
+  background-color: orange;
+  color: black;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
