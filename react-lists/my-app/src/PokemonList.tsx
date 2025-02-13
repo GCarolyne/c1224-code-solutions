@@ -1,21 +1,14 @@
-// import { useState } from 'react';
-// import { Pokemon } from './App';
+import { Pokemon } from './App';
 
-// type Props = {
-//   pokedex: Pokemon[];
-// };
+type Props = {
+  poxedex: Pokemon[];
+};
 
-// export function PokemonList({ pokedex }: Props) {
-//   return (
-//     <>
-//       <ul>
-//         <li>{pokedex}</li>
-//         <li>{pokedex}</li>
-//         <li>{pokedex}</li>
-//         <li>{pokedex}</li>
-//         <li>{pokedex}</li>
-
-//       </ul>
-//     </>
-//   );
-// }
+export function PokemonList({ poxedex }: Props) {
+  const listPoke = poxedex.map((pokemon) => <li>{pokemon.name}</li>);
+  return (
+    <>
+      <ul>{listPoke}</ul>
+    </>
+  );
+}
