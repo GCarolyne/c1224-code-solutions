@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars -- Remove me */
 import { useState } from 'react';
 import { PokemonList } from './PokemonList';
-
+import { Pokemon } from './PokemonList';
 export function App() {
   const [pokedex, setPokedex] = useState([
     { number: '001', name: 'Bulbasaur' },
@@ -20,17 +20,15 @@ export function App() {
   }
 
   function handleUpdate(): void {
-    const updatedPoke = {
-      number: '001',
-      name: 'Foggy',
-    };
-    setPokedex([...pokedex, updatedPoke]);
+    const updatePokedex = pokedex.map((pokemon) =>
+      pokemon.number === '039' ? { ...pokemon, name: 'Alfons' } : pokemon
+    );
+    setPokedex(updatePokedex);
   }
-
   function handleRemove(): void {
     const deletedItems = [...pokedex];
-    deletedItems.splice(deletedItems.length - 1, 1);
-    setPokedex(deletedItems);
+    const item = deletedItems.filter((poke) => poke.number !== '004');
+    setPokedex(item);
   }
 
   return (
