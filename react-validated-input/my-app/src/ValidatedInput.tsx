@@ -6,8 +6,7 @@ export function ValidatedInput() {
   let message = '';
   if (value === '') {
     message = 'A password is required.';
-  }
-  if (value.length < 8) message = 'Your password is too short. ';
+  } else if (value.length < 8) message = 'Your password is too short. ';
 
   return (
     <div className="flex w-full m-12">
