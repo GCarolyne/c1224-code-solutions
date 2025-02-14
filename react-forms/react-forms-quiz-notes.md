@@ -18,7 +18,7 @@ Answer the following questions in the provided markdown file before turning in t
   Better handling of dynamic inputs
   Easier to implement features like instant validation, disabling submit button, enforcing input formats
 - Which style do you prefer?
-  I prefered the controlled
+  I preferred the controlled
 - What two props must you pass to an input for it to be "controlled"?
   value (the current value)
   onChange (handler function)

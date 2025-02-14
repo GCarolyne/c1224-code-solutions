@@ -15,16 +15,16 @@ export function RegistrationFormControlled() {
           Username:
           <input
             type="text"
-            name="username"
             onChange={(e) => setPassword(e.target.value)}
+            value={username}
           />
         </label>
         <label>
           Password:
           <input
             type="text"
-            name="password"
             onChange={(e) => setUsername(e.target.value)}
+            value={password}
           />
         </label>
         <button type="submit" className="button">
