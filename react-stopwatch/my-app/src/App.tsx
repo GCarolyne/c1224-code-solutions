@@ -1,12 +1,12 @@
-// import './App.css';
-// import { Timewatch } from './Timewatch';
+import './App.css';
+import { Timewatch } from './Timewatch';
 
-// function App() {
-//   return (
-//     <>
-//       <Timewatch />
-//     </>
-//   );
-// }
+function App() {
+  return (
+    <>
+      <Timewatch />
+    </>
+  );
+}
 
-// export default App;
+export default App;
