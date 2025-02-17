@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import './App.css';
-import { Items } from './Items';
-
-import { SearchBar } from './SearchBar';
+import { SearchableList } from './SearchableList';
 
 const quotes: string[] = [
   'Yer a wizard Harry.',
@@ -20,21 +17,9 @@ const quotes: string[] = [
 ];
 
 export default function App() {
-  const [searchValue, setValue] = useState('');
-  const [filteredQuotes, setFilteredQuotes] = useState(quotes);
-
-  function handleSearch(newValue: string) {
-    setValue(newValue);
-    const filtered = quotes.filter((quote) =>
-      quote.toLowerCase().includes(newValue.toLowerCase())
-    );
-    setFilteredQuotes(filtered);
-  }
-
   return (
     <div>
-      <Items filteredQuotes={filteredQuotes} searchValue={searchValue} />
-      <SearchBar value={searchValue} onSearch={handleSearch} />
+      <SearchableList quotes={quotes} />
     </div>
   );
 }

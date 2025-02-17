@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './SearchableList.css';
-
+import { SearchBar } from './SearchBar';
 import { Items } from './Items';
 type Props = {
   quotes: string[];
@@ -19,15 +19,8 @@ export function SearchableList({ quotes }: Props) {
 
   return (
     <div>
-      <label>
-        Search
-        <input
-          type="text"
-          value={searchValue}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-      </label>
-      <Items filteredQuotes={filteredQuotes} searchValue={searchValue} />
+      <SearchBar value={searchValue} onSearch={handleSearch} />
+      <Items filteredQuotes={filteredQuotes} />
     </div>
   );
 }
