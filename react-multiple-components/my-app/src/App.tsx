@@ -1,27 +1,21 @@
-// import './App.css';
-// import { Banner } from './Banner';
-// import { Indicators } from './Indicators';
-// import { NextButton } from './NextButton';
-// import { PrevButton } from './PrevButton';
-// const items = [
-//   'Aardvark',
-//   'Bengal',
-//   'Caterpillar',
-//   'Dromedary',
-//   'Elephant',
-//   'Ferret',
-// ];
+import './App.css';
+import { RotatingBanner } from './RotatingBanner';
 
-// function App() {
+const items = [
+  'Aardvark',
+  'Bengal',
+  'Caterpillar',
+  'Dromedary',
+  'Elephant',
+  'Ferret',
+];
 
-//   return (
-//     <>
-//       <Bannerconst  />
-//       <PrevButton />
-//       <Indicators />
-//       <NextButton />
-//     </>
-//   );
-// }
+function App() {
+  return (
+    <>
+      <RotatingBanner items={items} />
+    </>
+  );
+}
 
-// export default App;
+export default App;

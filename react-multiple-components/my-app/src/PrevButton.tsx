@@ -1,7 +1,11 @@
-export function PrevButton() {
+type PrevButtonProp = {
+  onClick: () => void;
+};
+
+export function PrevButton({ onClick }: PrevButtonProp) {
   return (
     <div>
-      <button type="submit" className="prevBut">
+      <button onClick={onClick} className="prevBut">
         Prev
       </button>
     </div>

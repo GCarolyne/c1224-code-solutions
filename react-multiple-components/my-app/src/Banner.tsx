@@ -1,15 +1,15 @@
 type Props = {
-  items: string[];
+  item: string;
 };
 
-export function Banner({ items }: Props) {
+export function Banner({ item }: Props) {
   const x = [];
-  for (let i = 0; i < items.length; i++) {
-    x.push(items[i]);
+  for (let i = 0; i < item.length; i++) {
+    x.push(item[i]);
   }
   return (
     <div>
-      <ul>{x}</ul>
+      <h1>{x}</h1>
     </div>
   );
 }
