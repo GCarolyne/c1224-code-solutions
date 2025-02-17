@@ -7,9 +7,9 @@
 }
 
 .quote-item {
-  display: none; /* Hide by default */
+  display: none;
 }
 
 .quote-item.visible {
-  display: block; /* Show when visible class is added */
+  display: block;
 }
