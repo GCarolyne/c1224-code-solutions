@@ -1,15 +1,19 @@
 type Props = {
-  value: string[];
+  value: string;
+  onSearch: (value: string) => void;
 };
 
-export function SearchBar({ value }: Props) {
-  const filteredQuotes = value.filter((quote) =>
-    quote.toLowerCase().includes(quote.toLowerCase())
-  );
-
+export function SearchBar({ value, onSearch }: Props) {
   return (
     <div>
-      <ul>{filteredQuotes}</ul>
+      <label>
+        Search
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onSearch(e.target.value)}
+        />
+      </label>
     </div>
   );
 }

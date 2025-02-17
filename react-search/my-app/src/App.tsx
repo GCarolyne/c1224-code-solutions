@@ -1,29 +1,40 @@
-// import './App.css';
-// import { Items } from './Items';
-// import { SearchableList } from './SearchableList';
-// import { SearchBar } from './SearchBar';
-// // import { SearchBar } from './SearchBar';
-// const quotes: string[] = [
-//   'Yer a wizard Harry.',
-//   "I hope you're pleased with yourselves.",
-//   'It does not do well to dwell on dreams and forget to live.',
-//   'To the well-organized mind, death is but the next great adventure.',
-//   "You're a little scary sometimes, you know that? Brilliant... but scary.",
-//   'There will be no foolish wand-waving or silly incantations in this class.',
-//   'It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.',
-//   'If there is one thing Voldemort cannot understand, it is love.',
-//   'As much money and life as you could want!',
-//   'The truth. It is a beautiful and terrible thing, and should therefore be treated with great caution.',
-//   'There are some things you can’t share without ending up liking each other.',
-//   'Ah, music. A magic beyond all we do here!',
-// ];
+import { useState } from 'react';
+import './App.css';
+import { Items } from './Items';
 
-// export default function App() {
-//   return (
-//     <div>
-//       <SearchableList quotes={quotes} onChange={handleSearch} />
-//       <Items filtered={quotes} />
-//       <SearchBar value={quotes} />
-//     </div>
-//   );
-// }
+import { SearchBar } from './SearchBar';
+
+const quotes: string[] = [
+  'Yer a wizard Harry.',
+  "I hope you're pleased with yourselves.",
+  'It does not do well to dwell on dreams and forget to live.',
+  'To the well-organized mind, death is but the next great adventure.',
+  "You're a little scary sometimes, you know that? Brilliant... but scary.",
+  'There will be no foolish wand-waving or silly incantations in this class.',
+  'It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.',
+  'If there is one thing Voldemort cannot understand, it is love.',
+  'As much money and life as you could want!',
+  'The truth. It is a beautiful and terrible thing, and should therefore be treated with great caution.',
+  'There are some things you can’t share without ending up liking each other.',
+  'Ah, music. A magic beyond all we do here!',
+];
+
+export default function App() {
+  const [searchValue, setValue] = useState('');
+  const [filteredQuotes, setFilteredQuotes] = useState(quotes);
+
+  function handleSearch(newValue: string) {
+    setValue(newValue);
+    const filtered = quotes.filter((quote) =>
+      quote.toLowerCase().includes(newValue.toLowerCase())
+    );
+    setFilteredQuotes(filtered);
+  }
+
+  return (
+    <div>
+      <Items filteredQuotes={filteredQuotes} searchValue={searchValue} />
+      <SearchBar value={searchValue} onSearch={handleSearch} />
+    </div>
+  );
+}

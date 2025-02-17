@@ -1,15 +1,23 @@
+import './SearchableList.css';
+
 type Props = {
-  filtered: string[];
+  filteredQuotes: string[];
+  searchValue: string;
 };
 
-export function Items({ filtered }: Props) {
+export function Items({ filteredQuotes, searchValue }: Props) {
   return (
     <div>
       <ul>
-        {/* {quotes.map((quote, index) => (
-          <li key={index}>{quote}</li>
-        ))} */}
-        {filtered}
+        {filteredQuotes.map((quote, index) => (
+          <li
+            key={index}
+            className={`quote-item ${
+              searchValue.length > 0 ? 'visible' : 'hidden'
+            }`}>
+            {quote}
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -5,3 +5,11 @@
   font-size: 16px;
   width: 300px;
 }
+
+.quote-item {
+  display: none; /* Hide by default */
+}
+
+.quote-item.visible {
+  display: block; /* Show when visible class is added */
+}
