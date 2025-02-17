@@ -6,13 +6,14 @@ type IndicatorProps = {
   onClick: (index: number) => void;
 };
 
-export function Indicators({ count, index }: IndicatorProps) {
+export function Indicators({ count, index, onClick }: IndicatorProps) {
   const buttons = [];
   for (let i = 0; i < count; i++) {
     buttons.push(
       <button
         key={i}
-        className={index === i ? 'active' : ''}
+        onClick={() => onClick(i)}
+        className={`indicator-button ${index === i ? 'active' : ''}`}
         style={{ backgroundColor: i === index ? 'lightblue' : 'white' }}>
         {' '}
         {i + 1}
@@ -20,5 +21,5 @@ export function Indicators({ count, index }: IndicatorProps) {
     );
   }
 
-  return <div className="idicators-container">{buttons}</div>;
+  return <div>{buttons}</div>;
 }
