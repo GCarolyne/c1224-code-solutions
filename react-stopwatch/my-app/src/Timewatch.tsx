@@ -17,8 +17,7 @@ export function Timewatch() {
   }
   function clearReset() {
     if (intervalId) {
-      clearInterval(intervalId);
-      setIntervalId(undefined);
+      return running;
     }
     setCount(0);
   }
@@ -30,7 +29,7 @@ export function Timewatch() {
       </div>
       {!running ? (
         <button
-          type="submit"
+          type="button"
           onClick={() => {
             handlePlay();
             if (running) setCount(0);
