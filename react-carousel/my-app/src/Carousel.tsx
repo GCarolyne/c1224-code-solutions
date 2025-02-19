@@ -22,7 +22,7 @@ export function Carousel({ images }: Props) {
       setCurrentImage((currentImage + 1) % images.length);
     }, 3000);
     return () => clearTimeout(timerId);
-  }, [currentImage, setCurrentImage, images.length]);
+  }, [currentImage, images.length]);
 
   return (
     <>
