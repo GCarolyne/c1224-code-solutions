@@ -5,9 +5,11 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - In JavaScript, when is scope determined?
+  The compiler decides where you can access variables.
   When Javascript creates a function reference, it encloses the current variable scope into that function reference. This reference is referred to as a 'closure'.
+  By reading the JS code you will figure out the scope of the variables.
 - What allows JavaScript functions to "remember" variables from their surroundings?
-  JavaScript use lexical scoping and closure mechanisms. A closure is formed when a function retains access to variables in it outer scope, even after the outer function has finished executing.
+  The closure allows functions to remember the variables.
 - What values does a closure contain?
   The function itself, References to all variables in itsouter scope.
 - When is a closure created?
