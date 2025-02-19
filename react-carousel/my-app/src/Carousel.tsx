@@ -3,7 +3,7 @@ import { NextButton } from './NextButton';
 import { PrevButton } from './PrevButton';
 import './Indicators.css';
 import { Indicators } from './Indicators';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export type Image = {
   src: string;
@@ -16,6 +16,13 @@ type Props = {
 
 export function Carousel({ images }: Props) {
   const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setCurrentImage((currentImage + 1) % images.length);
+    }, 3000);
+    return () => clearTimeout(timerId);
+  });
 
   return (
     <>
