@@ -15,7 +15,6 @@ export function Indicators({ count, index, onClick }: IndicatorProps) {
         onClick={() => onClick(i)}
         className={`indicator-button ${index === i ? 'active' : ''}`}
         style={{ backgroundColor: i === index ? 'lightblue' : 'white' }}>
-        {' '}
         {i}
       </button>
     );
