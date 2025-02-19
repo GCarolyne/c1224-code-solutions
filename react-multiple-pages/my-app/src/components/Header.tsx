@@ -18,7 +18,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
-      {<Outlet></Outlet>}
+      <Outlet />
     </div>
   );
 }
