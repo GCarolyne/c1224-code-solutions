@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<unknown>();
+  const [isLoading, setIsLoading] = useState(true);
   console.log('product', products);
   useEffect(() => {
     async function loadItems() {
@@ -15,11 +16,19 @@ export function Catalog() {
       } catch (error) {
         setError(error);
       }
+      setIsLoading(false);
     }
     loadItems();
-  });
+  }, []);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   if (error) {
-    return <div>Error Loading Item</div>;
+    return (
+      <div>
+        Error! {error instanceof Error ? error.message : 'Unknown Error'}
+      </div>
+    );
   }
   return (
     <>
