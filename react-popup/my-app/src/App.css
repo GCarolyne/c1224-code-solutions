@@ -1,0 +1,36 @@
+.style-but {
+  background-color: grey;
+}
+
+.wrapper {
+  position: absolute;
+  top: auto;
+  left: auto;
+}
+
+.style-li {
+  list-style: none;
+  align-items: flex-start;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-shade {
+  background-color: lightblue;
+}
+
+.pop-shade {
+  position: fixed;
+  top: 0;
+  width: 100vh;
+  height: 100vh;
+  background-color: black;
+  pointer-events: all;
+  opacity: 0.1;
+}
