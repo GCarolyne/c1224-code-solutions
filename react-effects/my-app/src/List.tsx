@@ -14,8 +14,9 @@ export function List() {
         setItems(read);
       } catch (error) {
         setError(error);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     }
     work();
   }, []);
