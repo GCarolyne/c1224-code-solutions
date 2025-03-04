@@ -22,7 +22,6 @@ app.post('/api/notes', async (req, res, next) => {
     const { content } = req.query;
     if (content === undefined) {
       throw new ClientError(400, 'must have value');
-      return;
     }
     const note = {
       noteId: Math.floor(100 * Math.random()),
@@ -41,11 +40,9 @@ app.put('/api/notes/:noteId', async (req, res, next) => {
     const { content } = req.query;
     if (noteId === undefined) {
       throw new ClientError(400, 'must contain note id');
-      return;
     }
     if (content === undefined) {
       throw new ClientError(400, 'must have content value');
-      return;
     }
     const note = {
       noteId: +noteId,
@@ -63,7 +60,6 @@ app.delete('/api/notes/:noteId', async (req, res, next) => {
     const { noteId } = req.params;
     if (noteId === undefined) {
       throw new ClientError(400, 'must contain note id');
-      return;
     }
     await deleteNote(+noteId);
     res.send(`deleted ${noteId}`);
