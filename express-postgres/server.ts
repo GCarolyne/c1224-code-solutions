@@ -1,7 +1,6 @@
 import express from 'express';
 import { ClientError, errorMiddleware } from './lib/index.js';
 import pg from 'pg';
-pg.types.setTypeParser(pg.types.builtins.NUMERIC, parseFloat);
 
 const db = new pg.Pool({
   connectionString: 'postgres://dev:dev@localhost/pagila',
@@ -15,7 +14,7 @@ const app = express();
 app.get('/api/films', async (req, res, next) => {
   try {
     const sqlFilms = `
-  select "replacement_cost" as "replacementCost"
+  select "replacementCost"
   from "films"`;
     const result = await db.query(sqlFilms);
     console.log(result);
@@ -39,6 +38,31 @@ app.get('/api/films/:filmId', async (req, res, next) => {
       throw new ClientError(404, `filmId was not found`);
     }
     res.send(film);
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.put('/api/films/:filmId', async (req, res, next) => {
+  try {
+    const { filmId } = req.params;
+    const { title } = req.query;
+    console.log(title);
+    if (filmId === undefined) {
+      throw new ClientError(404, `title of film not found.`);
+    }
+    if (title === undefined) {
+      throw new ClientError(404, `not found error.`);
+    }
+    const sqlTitle = `
+    update "films"
+    set "title" = $1
+    where "filmId" = $2
+    returning *`;
+    const result = await db.query(sqlTitle, [title, filmId]);
+    const tit = result.rows;
+
+    res.send(tit);
   } catch (err) {
     next(err);
   }
