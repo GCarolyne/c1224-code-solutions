@@ -26,9 +26,7 @@ group by "countries"."name","countries"."countryId"
 `;
     const result = await db.query(sql);
     const countries = result.rows;
-    if (!countries) {
-      throw new ClientError(404, `country was not found.`);
-    }
+
     res.json(countries);
   } catch (err) {
     next(err);
@@ -41,7 +39,8 @@ app.get('/api/cities/:cityId', async (req, res, next) => {
 
     if (cityId === undefined)
       throw new ClientError(404, 'the city id was not found.');
-    if (!cityId)
+
+    if (!Number.isInteger(+cityId))
       throw new ClientError(
         400,
         'the city id needs to be an integer bad request.'
