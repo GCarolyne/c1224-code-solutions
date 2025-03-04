@@ -49,10 +49,10 @@ app.put('/api/films/:filmId', async (req, res, next) => {
     const { title } = req.query;
     console.log(title);
     if (filmId === undefined) {
-      throw new ClientError(404, `title of film not found.`);
+      throw new ClientError(404, `film id was not found.`);
     }
     if (title === undefined) {
-      throw new ClientError(404, `not found error.`);
+      throw new ClientError(404, `title was not found.`);
     }
     const sqlTitle = `
     update "films"
@@ -60,7 +60,7 @@ app.put('/api/films/:filmId', async (req, res, next) => {
     where "filmId" = $2
     returning *`;
     const result = await db.query(sqlTitle, [title, filmId]);
-    const tit = result.rows;
+    const tit = result.rows[0];
 
     res.send(tit);
   } catch (err) {
