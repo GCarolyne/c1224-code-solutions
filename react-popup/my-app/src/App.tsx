@@ -3,23 +3,23 @@ import './App.css';
 import { Popup } from './Popup';
 
 function App() {
-  const [isWorking, setIsWorking] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const positionRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
       <button
         className={'style-but'}
-        onClick={() => setIsWorking(!isWorking)}
+        onClick={() => setIsVisible(!isVisible)}
         ref={positionRef}>
         Pop Up!
       </button>
       <p>This is some text</p>
       <Popup
-        isOpen={!isWorking}
+        isOpen={!isVisible}
         positionTo={positionRef.current}
         onClose={() => {
-          setIsWorking(false);
+          setIsVisible(false);
         }}>
         <ul className="style-li back-shade">
           <li>About</li>
