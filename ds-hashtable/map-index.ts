@@ -23,5 +23,5 @@ export function buildIndex(docs: Document[]): DocumentIndex {
       }
     });
   });
-  return new Map();
+  return index;
 }
