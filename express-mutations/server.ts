@@ -67,9 +67,11 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
   returning *
   `;
     if (actorId === undefined)
-      throw new ClientError(404, 'actorId does not exisit.');
+      throw new ClientError(400, 'please provide actor id.');
     const result = await db.query(sql, [firstName, lastName, actorId]);
     const actorsEdit = result.rows[0];
+    if (actorsEdit === undefined)
+      throw new ClientError(404, 'could not find actor Id in database.');
     res.status(200).json(actorsEdit);
   } catch (err) {
     next(err);
@@ -86,9 +88,11 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
     returning *
     `;
     if (actorId === undefined)
-      throw new ClientError(404, 'the actor id was not found');
+      throw new ClientError(400, 'the actor id was not found');
     const result = await db.query(sql, [actorId]);
     const deleted = result.rows[0];
+    if (deleted === undefined)
+      throw new ClientError(404, 'did not delete from database.');
     res.status(204).json(deleted);
   } catch (err) {
     next(err);
