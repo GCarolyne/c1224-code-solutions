@@ -16,19 +16,13 @@ app.use(express.json());
 
 app.get('/api/grades', async (req, res, next) => {
   try {
-    const { grades } = req.body;
-    if (!grades) throw new ClientError(400, 'please provide grades');
     const sql = `
 select *
 from "grades"
-where "grades" = $1
 `;
-    const result = await db.query(sql, [grades]);
+    const result = await db.query(sql);
     const gradesRow = result.rows;
     res.status(200).json(gradesRow);
-    if (!gradesRow === undefined) {
-      return [];
-    }
   } catch (err) {
     next(err);
   }
@@ -36,17 +30,13 @@ where "grades" = $1
 
 app.get('/api/grades/:gradeId', async (req, res, next) => {
   try {
-    const { grades, gradeId } = req.body;
+    const { gradeId } = req.params;
     if (gradeId === undefined)
       throw new ClientError(404, 'no grade id found. ');
-    if (grades === undefined) throw new ClientError(404, 'no grades found. ');
     const sql = `
-  select "grades"."gradeId"
-  from "grades"
-  where "gradeId" = $2,
-  "grades" = $1`;
-    const result = await db.query(sql, [grades, gradeId]);
-    if (!result) throw new ClientError(500, 'query failed');
+  select "gradeId","name","course","score"
+  from "grades"`;
+    const result = await db.query(sql);
     const oneGrade = result.rows[0];
     res.status(200).json(oneGrade);
   } catch (err) {
@@ -64,6 +54,9 @@ app.post('/api/grades', async (req, res, next) => {
   }
   if (score === undefined) {
     throw new ClientError(400, 'invalid score');
+  }
+  if (!Number.isInteger(score) || score < 0 || score > 100) {
+    throw new ClientError(400, 'invalid score number');
   }
   try {
     const sql = `
@@ -92,7 +85,7 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     const sql = `
   update "grades"
   set "name" = $1,
-  "course" = $2
+  "course" = $2,
   "score" = $3
   where "gradeId" = $4
   returning *
@@ -100,7 +93,7 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     const result = await db.query(sql, [name, course, score, gradeId]);
     const gradeEdit = result.rows[0];
     if (gradeEdit === undefined)
-      throw new ClientError(404, 'could not find actor Id in database.');
+      throw new ClientError(404, 'could not find gradeId in database.');
     res.status(200).json(gradeEdit);
   } catch (err) {
     next(err);
