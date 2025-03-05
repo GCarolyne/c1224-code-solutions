@@ -5,10 +5,15 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What is the significance of an HTTP request's method?
+
   Indicate the action that the client wants the server to perform on a resource.
+
 - What is the significance of an HTTP response's status?
+
   The response status codes indicate the outcome of the attempted HTTP request.
+
 - What does the express.json() middleware do and when would you need it?
+
   It parses incoming request bodies with JSON payloads and makes the parsed data available on the req.body property.
 
   We need it when our api accepts json data in request bodies.
