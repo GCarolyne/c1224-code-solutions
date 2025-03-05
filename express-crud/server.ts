@@ -90,13 +90,14 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     throw new ClientError(400, 'please provide gradeId.');
   try {
     const sql = `
-  update "actors"
-  set "firstName" = $1,
-  "lastName" = $2
-  where "actorId" = $3
+  update "grades"
+  set "name" = $1,
+  "course" = $2
+  "score" = $3
+  where "gradeId" = $4
   returning *
   `;
-    const result = await db.query(sql, [name, course, score]);
+    const result = await db.query(sql, [name, course, score, gradeId]);
     const gradeEdit = result.rows[0];
     if (gradeEdit === undefined)
       throw new ClientError(404, 'could not find actor Id in database.');
@@ -113,8 +114,8 @@ app.delete('/api/grades/:gradeId', async (req, res, next) => {
   try {
     const sql = `
     delete
-    from "actors"
-    where "actorId" = $1
+    from "grades"
+    where "gradeId" = $1
     returning *
     `;
     const result = await db.query(sql, [gradeId]);
