@@ -85,8 +85,6 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     if (!Number.isInteger(score) || score < 0 || score > 100) {
       throw new ClientError(400, 'invalid score number');
     }
-    if (score === undefined)
-      throw new ClientError(400, 'please provide score.');
     validateGradeId(gradeId);
 
     const sql = `
@@ -121,7 +119,7 @@ app.delete('/api/grades/:gradeId', async (req, res, next) => {
     const result = await db.query(sql, [gradeId]);
     const deleted = result.rows[0];
     if (deleted === undefined)
-      throw new ClientError(404, 'did not delete from database.');
+      throw new ClientError(404, 'gradeId is not in database.');
     res.sendStatus(204);
   } catch (err) {
     next(err);
