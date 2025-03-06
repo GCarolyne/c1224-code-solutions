@@ -92,7 +92,7 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
     const result = await db.query(sql, [actorId]);
     const deleted = result.rows[0];
     if (deleted === undefined)
-      throw new ClientError(404, 'did not delete from database.');
+      throw new ClientError(404, 'count not find actor Id in database.');
     res.status(204).json(deleted);
   } catch (err) {
     next(err);
