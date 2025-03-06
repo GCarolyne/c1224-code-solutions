@@ -19,3 +19,6 @@ else
   echo 'no DATABASE_URL environment variable set' 1>&2
   exit 1
 fi
+
+
+

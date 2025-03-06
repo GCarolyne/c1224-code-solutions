@@ -22,12 +22,7 @@ export function Todos() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch('/api/todos', {
-          method: 'GET',
-          headers: {
-            'content-type': 'application/json',
-          },
-        });
+        const response = await fetch('/api/todos');
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
