@@ -31,10 +31,8 @@ from "grades"
 app.get('/api/grades/:gradeId', async (req, res, next) => {
   try {
     const { gradeId } = req.params;
-    if (!Number.isInteger(+gradeId))
-      throw new ClientError(404, 'the grade Id is not an integer. ');
-    if (gradeId === undefined)
-      throw new ClientError(404, 'no grade id found. ');
+    validateGradeId(gradeId);
+
     const sql = `
   select *
   from "grades"
@@ -89,8 +87,7 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     }
     if (score === undefined)
       throw new ClientError(400, 'please provide score.');
-    if (gradeId === undefined)
-      throw new ClientError(400, 'please provide gradeId.');
+    validateGradeId(gradeId);
 
     const sql = `
   update "grades"
@@ -113,8 +110,7 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
 app.delete('/api/grades/:gradeId', async (req, res, next) => {
   try {
     const { gradeId } = req.params;
-    if (gradeId === undefined)
-      throw new ClientError(400, 'the grade id was not found');
+    validateGradeId(gradeId);
 
     const sql = `
     delete
@@ -137,3 +133,11 @@ app.use(errorMiddleware);
 app.listen(8080, () => {
   console.log('listening on port 8080');
 });
+
+/**
+ * checks that the grade id is valid. throw if not.This is recommended to do if any code should be duplicate.
+ */
+function validateGradeId(gradeId: string): void {
+  if (!Number.isInteger(+gradeId))
+    throw new ClientError(404, 'the grade Id is not an integer. ');
+}
