@@ -39,11 +39,12 @@ app.get('/api/catalog', async (req, res, next) => {
 
 app.get('/api/catalog/:productId', async (req, res, next) => {
   try {
+    const productDD = Number(req.params.productId);
     const sql = `
-    select "products"."productId","products"."name","products"."longDescription","products"."imageUrl","products"."price"
+    select *
     from "products"
     where "productId" = $1`;
-    const productDD = Number(req.params.productId);
+
     const result = await db.query(sql, [productDD]);
 
     res.json(result.rows[0]);
