@@ -37,6 +37,7 @@ for HTML:
 </div>
 ```
 
+Today we learned about tables and context for user management.
 for CSS:
 
 ```css
